@@ -1,10 +1,11 @@
 package pokeapi
 
 import (
-	"github.com/KevinHaeusler/pokedexcli/internal/pokecache"
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/KevinHaeusler/pokedexcli/internal/pokecache"
 )
 
 type Client struct {
@@ -28,6 +29,7 @@ func (c *Client) Get(path string) ([]byte, error) {
 	if ok {
 		return bytes, nil
 	}
+
 	resp, err := c.httpClient.Get(fullPath)
 	if err != nil {
 		return nil, err

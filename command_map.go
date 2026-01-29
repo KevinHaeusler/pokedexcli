@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func commandMap(cfg *config) error {
+func commandMap(cfg *config, args []string) error {
 	var path string
 
 	if cfg.nextLocationsURL == nil {

@@ -25,10 +25,11 @@ func main() {
 		}
 
 		commandName := clean[0]
-
+		args := clean[1:]
 		command, exists := getCommands()[commandName]
 		if exists {
-			if err := command.callback(cfg); err != nil {
+
+			if err := command.callback(cfg, args); err != nil {
 				fmt.Println(err)
 			}
 			continue

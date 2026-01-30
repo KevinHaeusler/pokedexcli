@@ -14,6 +14,7 @@ func main() {
 		pokeapiClient:    pokeapi.NewClient(5 * time.Second),
 		nextLocationsURL: nil,
 		prevLocationsURL: nil,
+		caughtPokemon:    make(map[string]pokeapi.Pokemon),
 	}
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
